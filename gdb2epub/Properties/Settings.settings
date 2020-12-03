@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="gdb2epub.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MainFontPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\My Documents\My Downloads\font\irsans.ttf</Value>
+    </Setting>
+    <Setting Name="CoverImagePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\My Documents\My Trash\epub\cover-image.png</Value>
+    </Setting>
+    <Setting Name="CoverFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">IranNastaliq, 40pt</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

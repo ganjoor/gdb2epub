@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gdb2epub", "gdb2epub\gdb2epub.csproj", "{6A228AEA-DD40-469D-A6A9-6913FCDB0D93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNetEpub", "dotNetEpub\dotNetEpub.csproj", "{636F8E31-3F52-42D7-A335-F67D4FB45DCB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A228AEA-DD40-469D-A6A9-6913FCDB0D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A228AEA-DD40-469D-A6A9-6913FCDB0D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A228AEA-DD40-469D-A6A9-6913FCDB0D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A228AEA-DD40-469D-A6A9-6913FCDB0D93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{636F8E31-3F52-42D7-A335-F67D4FB45DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{636F8E31-3F52-42D7-A335-F67D4FB45DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{636F8E31-3F52-42D7-A335-F67D4FB45DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{636F8E31-3F52-42D7-A335-F67D4FB45DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {861D7F7F-7C62-4B0D-A2FC-F17A114025B7}
+	EndGlobalSection
+EndGlobal
