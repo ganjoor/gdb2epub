@@ -61,9 +61,9 @@ namespace gdb2epub
             this.btnEpub.Location = new System.Drawing.Point(565, 77);
             this.btnEpub.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEpub.Name = "btnEpub";
-            this.btnEpub.Size = new System.Drawing.Size(69, 33);
+            this.btnEpub.Size = new System.Drawing.Size(189, 33);
             this.btnEpub.TabIndex = 9;
-            this.btnEpub.Text = "epub";
+            this.btnEpub.Text = "Generate Epub";
             this.btnEpub.UseVisualStyleBackColor = true;
             this.btnEpub.Click += new System.EventHandler(this.btnEpub_Click);
             // 
@@ -80,9 +80,9 @@ namespace gdb2epub
             this.btnGDB.Location = new System.Drawing.Point(565, 39);
             this.btnGDB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGDB.Name = "btnGDB";
-            this.btnGDB.Size = new System.Drawing.Size(69, 33);
+            this.btnGDB.Size = new System.Drawing.Size(189, 33);
             this.btnGDB.TabIndex = 7;
-            this.btnGDB.Text = "gdb";
+            this.btnGDB.Text = "Select GDB";
             this.btnGDB.UseVisualStyleBackColor = true;
             this.btnGDB.Click += new System.EventHandler(this.btnGDB_Click);
             // 
@@ -161,9 +161,9 @@ namespace gdb2epub
             // 
             // btnChangeFont
             // 
-            this.btnChangeFont.Location = new System.Drawing.Point(713, 268);
+            this.btnChangeFont.Location = new System.Drawing.Point(713, 260);
             this.btnChangeFont.Name = "btnChangeFont";
-            this.btnChangeFont.Size = new System.Drawing.Size(33, 28);
+            this.btnChangeFont.Size = new System.Drawing.Size(58, 43);
             this.btnChangeFont.TabIndex = 18;
             this.btnChangeFont.Text = "...";
             this.btnChangeFont.UseVisualStyleBackColor = true;
@@ -171,9 +171,9 @@ namespace gdb2epub
             // 
             // btnChangeImage
             // 
-            this.btnChangeImage.Location = new System.Drawing.Point(713, 375);
+            this.btnChangeImage.Location = new System.Drawing.Point(713, 365);
             this.btnChangeImage.Name = "btnChangeImage";
-            this.btnChangeImage.Size = new System.Drawing.Size(33, 24);
+            this.btnChangeImage.Size = new System.Drawing.Size(58, 43);
             this.btnChangeImage.TabIndex = 19;
             this.btnChangeImage.Text = "...";
             this.btnChangeImage.UseVisualStyleBackColor = true;
@@ -181,9 +181,9 @@ namespace gdb2epub
             // 
             // btnSelectFont
             // 
-            this.btnSelectFont.Location = new System.Drawing.Point(713, 317);
+            this.btnSelectFont.Location = new System.Drawing.Point(713, 311);
             this.btnSelectFont.Name = "btnSelectFont";
-            this.btnSelectFont.Size = new System.Drawing.Size(33, 28);
+            this.btnSelectFont.Size = new System.Drawing.Size(58, 43);
             this.btnSelectFont.TabIndex = 20;
             this.btnSelectFont.Text = "...";
             this.btnSelectFont.UseVisualStyleBackColor = true;
