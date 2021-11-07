@@ -308,5 +308,41 @@ namespace gdb2epub
             txtMainFontPath.Text = Properties.Settings.Default.MainFontPath;
 
         }
+
+        private void btnSelectXml_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Filter = "*.xml|*.xml";
+                if (dlg.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                {
+                    txtXmlPath.Text = dlg.FileName;
+                }
+            }
+        }
+
+        private void btnEpubsOutDir_Click(object sender, EventArgs e)
+        {
+            using(FolderBrowserDialog dlg = new FolderBrowserDialog())
+            {
+                dlg.SelectedPath = txtEpubsPath.Text;
+                if(dlg.ShowDialog(this) == DialogResult.OK)
+                {
+                    txtEpubsPath.Text = dlg.SelectedPath;
+                }
+            }
+        }
+
+        private void btnIndexHtml_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Filter = "*.html|*.html";
+                if (dlg.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                {
+                    txtIndexHtmlPath.Text = dlg.FileName;
+                }
+            }
+        }
     }
 }
