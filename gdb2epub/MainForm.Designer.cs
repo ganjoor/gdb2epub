@@ -45,13 +45,14 @@ namespace gdb2epub
             this.btnChangeImage = new System.Windows.Forms.Button();
             this.btnSelectFont = new System.Windows.Forms.Button();
             this.grp = new System.Windows.Forms.GroupBox();
-            this.txtXmlPath = new System.Windows.Forms.TextBox();
-            this.btnSelectXml = new System.Windows.Forms.Button();
-            this.txtEpubsPath = new System.Windows.Forms.TextBox();
-            this.btnEpubsOutDir = new System.Windows.Forms.Button();
+            this.btnBatchGenerate = new System.Windows.Forms.Button();
             this.btnIndexHtml = new System.Windows.Forms.Button();
             this.txtIndexHtmlPath = new System.Windows.Forms.TextBox();
-            this.btnBatchGenerate = new System.Windows.Forms.Button();
+            this.btnEpubsOutDir = new System.Windows.Forms.Button();
+            this.txtEpubsPath = new System.Windows.Forms.TextBox();
+            this.btnSelectXml = new System.Windows.Forms.Button();
+            this.txtXmlPath = new System.Windows.Forms.TextBox();
+            this.progressFiles = new System.Windows.Forms.ProgressBar();
             this.grp.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -200,6 +201,7 @@ namespace gdb2epub
             // 
             // grp
             // 
+            this.grp.Controls.Add(this.progressFiles);
             this.grp.Controls.Add(this.btnBatchGenerate);
             this.grp.Controls.Add(this.btnIndexHtml);
             this.grp.Controls.Add(this.txtIndexHtmlPath);
@@ -209,46 +211,20 @@ namespace gdb2epub
             this.grp.Controls.Add(this.txtXmlPath);
             this.grp.Location = new System.Drawing.Point(55, 423);
             this.grp.Name = "grp";
-            this.grp.Size = new System.Drawing.Size(823, 295);
+            this.grp.Size = new System.Drawing.Size(823, 348);
             this.grp.TabIndex = 21;
             this.grp.TabStop = false;
             this.grp.Text = "http://epub.ganjoor.net";
             // 
-            // txtXmlPath
+            // btnBatchGenerate
             // 
-            this.txtXmlPath.Location = new System.Drawing.Point(26, 42);
-            this.txtXmlPath.Name = "txtXmlPath";
-            this.txtXmlPath.Size = new System.Drawing.Size(664, 27);
-            this.txtXmlPath.TabIndex = 0;
-            this.txtXmlPath.Text = "C:\\inetpub\\iganjoor\\android\\androidgdbs.xml";
-            // 
-            // btnSelectXml
-            // 
-            this.btnSelectXml.Location = new System.Drawing.Point(696, 39);
-            this.btnSelectXml.Name = "btnSelectXml";
-            this.btnSelectXml.Size = new System.Drawing.Size(99, 31);
-            this.btnSelectXml.TabIndex = 1;
-            this.btnSelectXml.Text = "XML";
-            this.btnSelectXml.UseVisualStyleBackColor = true;
-            this.btnSelectXml.Click += new System.EventHandler(this.btnSelectXml_Click);
-            // 
-            // txtEpubsPath
-            // 
-            this.txtEpubsPath.Location = new System.Drawing.Point(26, 88);
-            this.txtEpubsPath.Name = "txtEpubsPath";
-            this.txtEpubsPath.Size = new System.Drawing.Size(664, 27);
-            this.txtEpubsPath.TabIndex = 2;
-            this.txtEpubsPath.Text = "C:\\inetpub\\iganjoor\\epub";
-            // 
-            // btnEpubsOutDir
-            // 
-            this.btnEpubsOutDir.Location = new System.Drawing.Point(696, 85);
-            this.btnEpubsOutDir.Name = "btnEpubsOutDir";
-            this.btnEpubsOutDir.Size = new System.Drawing.Size(99, 31);
-            this.btnEpubsOutDir.TabIndex = 3;
-            this.btnEpubsOutDir.Text = "Out. Dir";
-            this.btnEpubsOutDir.UseVisualStyleBackColor = true;
-            this.btnEpubsOutDir.Click += new System.EventHandler(this.btnEpubsOutDir_Click);
+            this.btnBatchGenerate.Location = new System.Drawing.Point(27, 178);
+            this.btnBatchGenerate.Name = "btnBatchGenerate";
+            this.btnBatchGenerate.Size = new System.Drawing.Size(768, 88);
+            this.btnBatchGenerate.TabIndex = 6;
+            this.btnBatchGenerate.Text = "Batch Generate";
+            this.btnBatchGenerate.UseVisualStyleBackColor = true;
+            this.btnBatchGenerate.Click += new System.EventHandler(this.btnBatchGenerate_Click);
             // 
             // btnIndexHtml
             // 
@@ -268,20 +244,54 @@ namespace gdb2epub
             this.txtIndexHtmlPath.TabIndex = 4;
             this.txtIndexHtmlPath.Text = "C:\\inetpub\\epub\\index.html";
             // 
-            // btnBatchGenerate
+            // btnEpubsOutDir
             // 
-            this.btnBatchGenerate.Location = new System.Drawing.Point(27, 178);
-            this.btnBatchGenerate.Name = "btnBatchGenerate";
-            this.btnBatchGenerate.Size = new System.Drawing.Size(768, 88);
-            this.btnBatchGenerate.TabIndex = 6;
-            this.btnBatchGenerate.Text = "Batch Generate";
-            this.btnBatchGenerate.UseVisualStyleBackColor = true;
+            this.btnEpubsOutDir.Location = new System.Drawing.Point(696, 85);
+            this.btnEpubsOutDir.Name = "btnEpubsOutDir";
+            this.btnEpubsOutDir.Size = new System.Drawing.Size(99, 31);
+            this.btnEpubsOutDir.TabIndex = 3;
+            this.btnEpubsOutDir.Text = "Out. Dir";
+            this.btnEpubsOutDir.UseVisualStyleBackColor = true;
+            this.btnEpubsOutDir.Click += new System.EventHandler(this.btnEpubsOutDir_Click);
+            // 
+            // txtEpubsPath
+            // 
+            this.txtEpubsPath.Location = new System.Drawing.Point(26, 88);
+            this.txtEpubsPath.Name = "txtEpubsPath";
+            this.txtEpubsPath.Size = new System.Drawing.Size(664, 27);
+            this.txtEpubsPath.TabIndex = 2;
+            this.txtEpubsPath.Text = "C:\\inetpub\\iganjoor\\epub";
+            // 
+            // btnSelectXml
+            // 
+            this.btnSelectXml.Location = new System.Drawing.Point(696, 39);
+            this.btnSelectXml.Name = "btnSelectXml";
+            this.btnSelectXml.Size = new System.Drawing.Size(99, 31);
+            this.btnSelectXml.TabIndex = 1;
+            this.btnSelectXml.Text = "XML";
+            this.btnSelectXml.UseVisualStyleBackColor = true;
+            this.btnSelectXml.Click += new System.EventHandler(this.btnSelectXml_Click);
+            // 
+            // txtXmlPath
+            // 
+            this.txtXmlPath.Location = new System.Drawing.Point(26, 42);
+            this.txtXmlPath.Name = "txtXmlPath";
+            this.txtXmlPath.Size = new System.Drawing.Size(664, 27);
+            this.txtXmlPath.TabIndex = 0;
+            this.txtXmlPath.Text = "C:\\inetpub\\iganjoor\\android\\androidgdbs.xml";
+            // 
+            // progressFiles
+            // 
+            this.progressFiles.Location = new System.Drawing.Point(26, 283);
+            this.progressFiles.Name = "progressFiles";
+            this.progressFiles.Size = new System.Drawing.Size(769, 35);
+            this.progressFiles.TabIndex = 7;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(905, 767);
+            this.ClientSize = new System.Drawing.Size(905, 806);
             this.Controls.Add(this.grp);
             this.Controls.Add(this.btnSelectFont);
             this.Controls.Add(this.btnChangeImage);
@@ -334,6 +344,7 @@ namespace gdb2epub
         private System.Windows.Forms.Button btnEpubsOutDir;
         private System.Windows.Forms.TextBox txtEpubsPath;
         private System.Windows.Forms.Button btnBatchGenerate;
+        private System.Windows.Forms.ProgressBar progressFiles;
     }
 }
 

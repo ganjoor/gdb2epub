@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.IO.Compression;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace gdb2epub
 {
@@ -32,7 +34,7 @@ namespace gdb2epub
 
         private bool GDB2EPub(string gdbFile, string epubFile)
         {
-            DbBrowser db = new DbBrowser(txtGDB.Text);
+            DbBrowser db = new DbBrowser(gdbFile);
             if (!db.Connected)
                 return false;
             string tempPath = Path.Combine(Path.GetDirectoryName(epubFile), "temp");
@@ -343,6 +345,130 @@ namespace gdb2epub
                     txtIndexHtmlPath.Text = dlg.FileName;
                 }
             }
+        }
+
+        /// <summary>
+        /// دریافت یک فایل xml و تبدیل آن به لیستی از GDBInfoها
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="Exception"></param>
+        /// <returns></returns>
+        public static List<GDBInfo> RetrieveListFromFile(string fileName, out string Exception)
+        {
+            List<GDBInfo> lstGDBs = new List<GDBInfo>();
+            try
+            {
+                using (StreamReader reader = File.OpenText(fileName))
+                {
+                    XmlDocument doc = new XmlDocument();
+                    doc.LoadXml(reader.ReadToEnd());
+
+                    XmlNodeList gdbNodes = doc.GetElementsByTagName("gdb");
+                    foreach (XmlNode gdbNode in gdbNodes)
+                    {
+                        GDBInfo gdbInfo = new GDBInfo();
+                        foreach (XmlNode Node in gdbNode.ChildNodes)
+                        {
+                            switch (Node.Name)
+                            {
+                                case "CatName":
+                                    gdbInfo.CatName = Node.InnerText;
+                                    break;
+                                case "PoetID":
+                                    gdbInfo.PoetID = Convert.ToInt32(Node.InnerText);
+                                    break;
+                                case "CatID":
+                                    gdbInfo.CatID = Convert.ToInt32(Node.InnerText);
+                                    break;
+                                case "DownloadUrl":
+                                    gdbInfo.DownloadUrl = Node.InnerText;
+                                    break;
+                                case "BlogUrl":
+                                    gdbInfo.BlogUrl = Node.InnerText;
+                                    break;
+                                case "FileExt":
+                                    gdbInfo.FileExt = Node.InnerText;
+                                    break;
+                                case "ImageUrl":
+                                    gdbInfo.ImageUrl = Node.InnerText;
+                                    break;
+                                case "FileSizeInByte":
+                                    gdbInfo.FileSizeInByte = Convert.ToInt32(Node.InnerText);
+                                    break;
+                                case "LowestPoemID":
+                                    gdbInfo.LowestPoemID = Convert.ToInt32(Node.InnerText);
+                                    break;
+                                case "PubDate":
+                                    {
+                                        string[] dateParts = Node.InnerText.Split(new char[] { '-' }, StringSplitOptions.RemoveEmptyEntries);
+                                        int Year = Convert.ToInt32(dateParts[0]);
+                                        int Month = Convert.ToInt32(dateParts[1]);
+                                        int Day = Convert.ToInt32(dateParts[2]);
+                                        gdbInfo.PubDate = new DateTime(Year, Month, Day);
+                                    }
+                                    break;
+
+                            }
+
+                        }
+                        lstGDBs.Add(gdbInfo);
+                    }
+
+                }
+                Exception = string.Empty;
+                return lstGDBs;
+            }
+            catch (Exception exp)
+            {
+                Exception = exp.Message;
+                return null;
+            }
+        }
+
+        private void btnBatchGenerate_Click(object sender, EventArgs e)
+        {
+            var gdbList = RetrieveListFromFile(txtXmlPath.Text, out string exp);
+            if(gdbList == null)
+            {
+                MessageBox.Show(exp.ToString());
+                return;
+            }
+            Enabled = false;
+            Application.DoEvents();
+            string gdbFilesPaths = Path.Combine(Path.GetDirectoryName(txtXmlPath.Text), "gdb");
+            string outPath = txtEpubsPath.Text;
+            if (!Directory.Exists(outPath))
+                Directory.CreateDirectory(outPath);
+            progressFiles.Maximum = gdbList.Count;
+            foreach (var gdb in gdbList)
+            {
+                progressFiles.Value++;
+                Application.DoEvents();
+                string fileName = Path.Combine(gdbFilesPaths, gdb.DownloadUrl.Substring(gdb.DownloadUrl.LastIndexOf("/") + 1));
+                if (!File.Exists(fileName))
+                    continue;
+                using (ZipStorer zip = ZipStorer.Open(fileName, FileAccess.Read))
+                {
+                    List<ZipStorer.ZipFileEntry> dir = zip.ReadCentralDir();
+                    foreach (ZipStorer.ZipFileEntry entry in dir)
+                    {
+                        string gdbFileName = Path.GetFileName(entry.FilenameInZip);
+                        if (Path.GetExtension(gdbFileName).Equals(".gdb") || Path.GetExtension(gdbFileName).Equals(".s3db"))
+                        {
+                            string gdbExtractPath = Path.Combine(outPath, gdbFileName);
+                            string epubPath = Path.Combine(outPath, Path.GetFileNameWithoutExtension(gdbFileName) + ".epub");
+                            if (zip.ExtractFile(entry, gdbExtractPath))
+                            {
+                                GDB2EPub(gdbExtractPath, epubPath);
+                                File.Delete(gdbExtractPath);
+                            }
+                        }
+                    }
+                }
+            }
+
+            Enabled = true;
+            Application.DoEvents();
         }
     }
 }
