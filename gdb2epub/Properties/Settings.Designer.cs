@@ -12,7 +12,7 @@ namespace gdb2epub.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,7 +25,7 @@ namespace gdb2epub.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\My Documents\\My Downloads\\font\\irsans.ttf")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\inetpub\\epub\\res\\irsans.ttf")]
         public string MainFontPath {
             get {
                 return ((string)(this["MainFontPath"]));
@@ -37,7 +37,7 @@ namespace gdb2epub.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\My Documents\\My Trash\\epub\\cover-image.png")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\inetpub\\epub\\res\\cover-image.png")]
         public string CoverImagePath {
             get {
                 return ((string)(this["CoverImagePath"]));

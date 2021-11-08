@@ -45,6 +45,7 @@ namespace gdb2epub
             this.btnChangeImage = new System.Windows.Forms.Button();
             this.btnSelectFont = new System.Windows.Forms.Button();
             this.grp = new System.Windows.Forms.GroupBox();
+            this.progressFiles = new System.Windows.Forms.ProgressBar();
             this.btnBatchGenerate = new System.Windows.Forms.Button();
             this.btnIndexHtml = new System.Windows.Forms.Button();
             this.txtIndexHtmlPath = new System.Windows.Forms.TextBox();
@@ -52,7 +53,6 @@ namespace gdb2epub
             this.txtEpubsPath = new System.Windows.Forms.TextBox();
             this.btnSelectXml = new System.Windows.Forms.Button();
             this.txtXmlPath = new System.Windows.Forms.TextBox();
-            this.progressFiles = new System.Windows.Forms.ProgressBar();
             this.grp.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,7 +119,7 @@ namespace gdb2epub
             this.txtMainFontPath.Name = "txtMainFontPath";
             this.txtMainFontPath.Size = new System.Drawing.Size(504, 27);
             this.txtMainFontPath.TabIndex = 12;
-            this.txtMainFontPath.Text = "D:\\My Documents\\My Downloads\\font\\irsans.ttf";
+            this.txtMainFontPath.Text = "C:\\inetpub\\epub\\res\\irsans.ttf";
             // 
             // lblMainFontPath
             // 
@@ -167,7 +167,7 @@ namespace gdb2epub
             this.txtCoverImage.Name = "txtCoverImage";
             this.txtCoverImage.Size = new System.Drawing.Size(504, 27);
             this.txtCoverImage.TabIndex = 17;
-            this.txtCoverImage.Text = "D:\\My Documents\\My Trash\\epub\\cover-image.png";
+            this.txtCoverImage.Text = "C:\\inetpub\\epub\\res\\cover-image.png";
             // 
             // btnChangeFont
             // 
@@ -215,6 +215,13 @@ namespace gdb2epub
             this.grp.TabIndex = 21;
             this.grp.TabStop = false;
             this.grp.Text = "http://epub.ganjoor.net";
+            // 
+            // progressFiles
+            // 
+            this.progressFiles.Location = new System.Drawing.Point(26, 283);
+            this.progressFiles.Name = "progressFiles";
+            this.progressFiles.Size = new System.Drawing.Size(769, 35);
+            this.progressFiles.TabIndex = 7;
             // 
             // btnBatchGenerate
             // 
@@ -279,13 +286,6 @@ namespace gdb2epub
             this.txtXmlPath.Size = new System.Drawing.Size(664, 27);
             this.txtXmlPath.TabIndex = 0;
             this.txtXmlPath.Text = "C:\\inetpub\\iganjoor\\android\\androidgdbs.xml";
-            // 
-            // progressFiles
-            // 
-            this.progressFiles.Location = new System.Drawing.Point(26, 283);
-            this.progressFiles.Name = "progressFiles";
-            this.progressFiles.Size = new System.Drawing.Size(769, 35);
-            this.progressFiles.TabIndex = 7;
             // 
             // MainForm
             // 

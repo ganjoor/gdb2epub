@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="MainFontPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">D:\My Documents\My Downloads\font\irsans.ttf</Value>
+      <Value Profile="(Default)">C:\inetpub\epub\res\irsans.ttf</Value>
     </Setting>
     <Setting Name="CoverImagePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">D:\My Documents\My Trash\epub\cover-image.png</Value>
+      <Value Profile="(Default)">C:\inetpub\epub\res\cover-image.png</Value>
     </Setting>
     <Setting Name="CoverFont" Type="System.Drawing.Font" Scope="User">
       <Value Profile="(Default)">IranNastaliq, 40pt</Value>
