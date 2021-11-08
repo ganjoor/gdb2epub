@@ -1,4 +1,5 @@
-﻿using Epub;
+﻿using DNTPersianUtils.Core;
+using Epub;
 using ganjoor;
 using System;
 using System.Collections.Generic;
@@ -440,6 +441,8 @@ namespace gdb2epub
             if (!Directory.Exists(outPath))
                 Directory.CreateDirectory(outPath);
             progressFiles.Maximum = gdbList.Count;
+            progressFiles.Value = 0;
+            List<GanjoorEpub> epubs = new List<GanjoorEpub>();
             foreach (var gdb in gdbList)
             {
                 progressFiles.Value++;
@@ -460,12 +463,68 @@ namespace gdb2epub
                             if (zip.ExtractFile(entry, gdbExtractPath))
                             {
                                 GDB2EPub(gdbExtractPath, epubPath);
+
+                                epubs.Add
+                                    (
+                                    new GanjoorEpub()
+                                    {
+                                        Author = lblPoetName.Text,
+                                        FileSize = (new FileInfo(epubPath)).Length,
+                                        FileName = Path.GetFileName(epubPath)
+                                    }
+                                    );
                                 File.Delete(gdbExtractPath);
+                                string[] tmpFiles = Directory.GetFiles(Path.Combine(outPath, "temp"), "*.*");
+                                foreach (var tmpFile in tmpFiles)
+                                {
+                                    File.Delete(tmpFile);
+                                }
                             }
                         }
                     }
                 }
+
+               
             }
+
+            Directory.Delete(Path.Combine(outPath, "temp"));
+
+            epubs.Sort((a, b) => a.Author.CompareTo(b.Author));
+
+            
+
+
+            string tableRowsHtml = "";
+            for (int i = 0; i < epubs.Count; i++)
+            {
+                if(i % 2 == 0)
+                {
+                    tableRowsHtml += $"<tr class=\"e\">{Environment.NewLine}";
+                }
+                else
+                {
+                    tableRowsHtml += $"<tr>{Environment.NewLine}";
+                }
+
+                tableRowsHtml += $"<td class=\"c1\">{(i + 1).ToPersianNumbers()}</td>{Environment.NewLine}";
+                tableRowsHtml += $"<td class=\"c2\">{epubs[i].Author}</td>{Environment.NewLine}";
+                string fileSizeString = epubs[i].FileSize < 1048576 ? $"{epubs[i].FileSize / 1024} کیلوبایت" : $"{(epubs[i].FileSize / 1048576.0M).ToString("0.##")} مگابایت";
+                tableRowsHtml += $"<td class=\"c3\">{fileSizeString.ToPersianNumbers()}</td>{Environment.NewLine}";
+                tableRowsHtml += $"<td class=\"c4\"><a href=\"ttp://i.ganjoor.net/epub/{epubs[i].FileName}\">دریافت</a></td>{Environment.NewLine}";
+                tableRowsHtml += $"</tr>{Environment.NewLine}";
+            }
+
+            string html = Properties.Resources.index;
+            int insertIndex = html.IndexOf("</tr>") + "</tr>".Length;
+
+            html = html.Substring(0, insertIndex) + tableRowsHtml + html.Substring(insertIndex + 1);
+
+            if (File.Exists(txtIndexHtmlPath.Text))
+                File.Delete(txtIndexHtmlPath.Text);
+
+            File.WriteAllText(txtIndexHtmlPath.Text, html);
+
+
 
             Enabled = true;
             Application.DoEvents();

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="fa">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="fa" />
+<title>کتابخانهٔ گنجور</title>
+<meta name="description" content="دریافت آثار شاعران در قالب epub " />
+<meta name="keywords" content="شعر , فارسی , شاعر , کتاب , رایگان , download , ایران , پارسی , epub , گنجور رومیزی , ساغر , اندروید , آندرویید , android , iphone , آی فون , reader , book" />
+<style type="text/css">
+@import url(http://epub.ganjoor.net/css/style.css);
+</style>	
+</head>
+<body>
+<h1>
+<a href="http://epub.ganjoor.net"><img src="img/glib.gif" alt="کتابخانهٔ گنجور" /></a>
+</h1>
+<div id="main">
+<p>
+برای مطالعهٔ محتوای سایت گنجور (و بیشتر از آن) بر روی کامپیوتر و گوشیهای هوشمند بدون نیاز به اینترنت -با استفاده از نرم‌افزارهای کتابخوان با قابلیت نمایش کتابهای با پسوند epub- فایل آثار شاعر مورد نظر را از فهرست زیر دریافت کنید.
+</p>
+<p>
+جهت مشاهدهٔ فهرستی از نرم‌افزارهای کامپیوتری یا قابل اجرا بر روی انواع گوشیهای تلفن همراه برای باز کردن فایلهای epub <a href="http://blog.ganjoor.net/1391/12/04/epub/">این نوشته</a> را مطالعه بفرمایید.
+</p>
+<table>
+<tr class="h">
+<td class="c1">ردیف</td>
+<td class="c2">شاعر</td>
+<td class="c3">اندازهٔ فایل</td>
+<td class="c4">دریافت</td>
+</tr>
+
+</table>
+</div>
+<div id="footer">
+<a href="http://ganjoor.net">گنجور</a> | <a href="http://dg.ganjoor.net">گنجور رومیزی</a> | <a href="http://pozh.org/saaghar/">ساغر</a> | <a href="http://blog.ganjoor.net">تازه‌های گنجور</a> | <a href="https://ganjoor.net/contact/">تماس</a>
+</div>
+
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63626-13', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
