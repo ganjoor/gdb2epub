@@ -145,7 +145,7 @@ namespace gdb2epub
 
 
 
-                epub.Generate(Path.Combine(Path.GetDirectoryName(epubFile), GPersianTextSync.Farglisize(Poet._Name) + ".epub"));
+                epub.Generate(epubFile);
 
 
 
