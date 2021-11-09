@@ -510,7 +510,7 @@ namespace gdb2epub
                 tableRowsHtml += $"<td class=\"c2\">{epubs[i].Author}</td>{Environment.NewLine}";
                 string fileSizeString = epubs[i].FileSize < 1048576 ? $"{epubs[i].FileSize / 1024} کیلوبایت" : $"{(epubs[i].FileSize / 1048576.0M).ToString("0.##")} مگابایت";
                 tableRowsHtml += $"<td class=\"c3\">{fileSizeString.ToPersianNumbers()}</td>{Environment.NewLine}";
-                tableRowsHtml += $"<td class=\"c4\"><a href=\"ttp://i.ganjoor.net/epub/{epubs[i].FileName}\">دریافت</a></td>{Environment.NewLine}";
+                tableRowsHtml += $"<td class=\"c4\"><a href=\"http://i.ganjoor.net/epub/{epubs[i].FileName}\">دریافت</a></td>{Environment.NewLine}";
                 tableRowsHtml += $"</tr>{Environment.NewLine}";
             }
 
