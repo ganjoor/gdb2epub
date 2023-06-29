@@ -107,20 +107,20 @@ namespace gdb2epub
                 promoXhtml += "</h1>";
                 string x = "";
                 x += "<p>";
-                x += "<a href=\"http://ganjoor.net\">گنجور</a> پروژه‌ای با هدف فراهم کردن دسترسی آزاد و رایگان پارسی‌زبانان به آثار سخنسرایان پارسی‌گوست.";
+                x += "<a href=\"https://ganjoor.net\">گنجور</a> پروژه‌ای با هدف فراهم کردن دسترسی آزاد و رایگان پارسی‌زبانان به آثار سخنسرایان پارسی‌گوست.";
                 x += "</p>";
                 x += "<p>";
-                x += "شما می‌توانید با دریافت برنامه‌های رایگان <a href=\"http://ganjoor.sourceforge.net\">گنجور رومیزی</a> یا <a href=\"http://pozh.org/saaghar\">ساغر</a> و برخی برنامه‌های رایگان دیگر تهیه شده برای سکوهای دیگر ";
+                x += "شما می‌توانید با دریافت برنامه‌های رایگان <a href=\"https://dg.ganjoor.net\">گنجور رومیزی</a> یا <a href=\"http://pozh.org/saaghar\">ساغر</a> و برخی برنامه‌های رایگان دیگر تهیه شده برای سکوهای دیگر ";
                 x += "از امکانات بیشتری جهت مطالعۀ این آثار بهره‌مند شوید.";
                 x += "</p>";
                 x += "<p>";
                 x += "اخبار جدید راجع به پروژۀ گنجور را در این نشانی مطالعه فرمایید:";
                 x += "</p>";
                 x += "<p>";
-                x += "<a href=\"http://blog.ganjoor.net\">http://blog.ganjoor.net</a>";
+                x += "<a href=\"https://blog.ganjoor.net\">https://blog.ganjoor.net</a>";
                 x += "</p>";
                 x += "<p>";
-                x += "نظرات خود را به پست الکترونیکی <a href=\"mailto:ganjoor@ganjoor.net\">ganjoor@ganjoor.net</a> ارسال یا در صفحۀ فیس‌بوک گنجور به نشانی <a href=\"https://www.facebook.com/ganjoor\">http://www.facebook.com/ganjoor</a> مطرح فرمایید.";
+                x += "نظرات خود را به پست الکترونیکی <a href=\"mailto:ganjoor@ganjoor.net\">ganjoor@ganjoor.net</a> ارسال یا در صفحۀ فیس‌بوک گنجور به نشانی <a href=\"https://www.facebook.com/ganjoor\">https://www.facebook.com/ganjoor</a> مطرح فرمایید.";
                 x += "</p>";
                 x += "</body>";
                 x += "</html>";
@@ -510,7 +510,7 @@ namespace gdb2epub
                 tableRowsHtml += $"<td class=\"c2\">{epubs[i].Author}</td>{Environment.NewLine}";
                 string fileSizeString = epubs[i].FileSize < 1048576 ? $"{epubs[i].FileSize / 1024} کیلوبایت" : $"{(epubs[i].FileSize / 1048576.0M).ToString("0.##")} مگابایت";
                 tableRowsHtml += $"<td class=\"c3\">{fileSizeString.ToPersianNumbers()}</td>{Environment.NewLine}";
-                tableRowsHtml += $"<td class=\"c4\"><a href=\"http://i.ganjoor.net/epub/{epubs[i].FileName}\">دریافت</a></td>{Environment.NewLine}";
+                tableRowsHtml += $"<td class=\"c4\"><a href=\"https://i.ganjoor.net/epub/{epubs[i].FileName}\">دریافت</a></td>{Environment.NewLine}";
                 tableRowsHtml += $"</tr>{Environment.NewLine}";
             }
 

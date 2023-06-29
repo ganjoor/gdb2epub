@@ -214,7 +214,7 @@ namespace gdb2epub
             this.grp.Size = new System.Drawing.Size(823, 348);
             this.grp.TabIndex = 21;
             this.grp.TabStop = false;
-            this.grp.Text = "http://epub.ganjoor.net";
+            this.grp.Text = "https://epub.ganjoor.net";
             // 
             // progressFiles
             // 
