@@ -8,12 +8,12 @@
 <meta name="description" content="دریافت آثار شاعران در قالب epub " />
 <meta name="keywords" content="شعر , فارسی , شاعر , کتاب , رایگان , download , ایران , پارسی , epub , گنجور رومیزی , ساغر , اندروید , آندرویید , android , iphone , آی فون , reader , book" />
 <style type="text/css">
-@import url(http://epub.ganjoor.net/css/style.css);
+@import url(https://epub.ganjoor.net/css/style.css);
 </style>	
 </head>
 <body>
 <h1>
-<a href="http://epub.ganjoor.net"><img src="img/glib.gif" alt="کتابخانهٔ گنجور" /></a>
+<a href="https://epub.ganjoor.net"><img src="img/glib.gif" alt="کتابخانهٔ گنجور" /></a>
 </h1>
 <div id="main">
 <p>
@@ -33,7 +33,7 @@
 </table>
 </div>
 <div id="footer">
-<a href="http://ganjoor.net">گنجور</a> | <a href="http://dg.ganjoor.net">گنجور رومیزی</a> | <a href="http://pozh.org/saaghar/">ساغر</a> | <a href="http://blog.ganjoor.net">تازه‌های گنجور</a> | <a href="https://ganjoor.net/contact/">تماس</a>
+<a href="https://ganjoor.net">گنجور</a> | <a href="https://dg.ganjoor.net">گنجور رومیزی</a> | <a href="http://pozh.org/saaghar/">ساغر</a> | <a href="https://blog.ganjoor.net">تازه‌های گنجور</a> | <a href="https://ganjoor.net/contact/">تماس</a>
 </div>
 
 <script type="text/javascript">
