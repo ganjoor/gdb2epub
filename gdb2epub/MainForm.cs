@@ -1,5 +1,6 @@
 ﻿using DNTPersianUtils.Core;
 using Epub;
+using FluentFTP;
 using ganjoor;
 using System;
 using System.Collections.Generic;
@@ -310,6 +311,11 @@ namespace gdb2epub
             txtCoverImage.Text = Properties.Settings.Default.CoverImagePath;
             txtMainFontPath.Text = Properties.Settings.Default.MainFontPath;
 
+            txtFTPHost.Text = Properties.Settings.Default.ExternalFTPServer_Host;
+            txtFTPUsername.Text = Properties.Settings.Default.ExternalFTPServer_Username;
+            txtFTPPassword.Text = Properties.Settings.Default.ExternalFTPServer_Password;
+            txtFTPRootPath.Text = Properties.Settings.Default.ExternalFTPServer_RootPath;
+
         }
 
         private void btnSelectXml_Click(object sender, EventArgs e)
@@ -426,7 +432,12 @@ namespace gdb2epub
             }
         }
 
-        private void btnBatchGenerate_Click(object sender, EventArgs e)
+        private void FtpClient_ValidateCertificate(FluentFTP.Client.BaseClient.BaseFtpClient control, FtpSslValidationEventArgs e)
+        {
+            e.Accept = true;
+        }
+
+        private async void btnBatchGenerate_Click(object sender, EventArgs e)
         {
             var gdbList = RetrieveListFromFile(txtXmlPath.Text, out string exp);
             if(gdbList == null)
@@ -442,6 +453,24 @@ namespace gdb2epub
                 Directory.CreateDirectory(outPath);
             progressFiles.Maximum = gdbList.Count;
             progressFiles.Value = 0;
+
+            Properties.Settings.Default.ExternalFTPServer_Host = txtFTPHost.Text;
+            Properties.Settings.Default.ExternalFTPServer_Username = txtFTPUsername.Text;
+            Properties.Settings.Default.ExternalFTPServer_Password = txtFTPPassword.Text;
+            Properties.Settings.Default.ExternalFTPServer_RootPath = txtFTPRootPath.Text;
+
+            Properties.Settings.Default.Save();
+
+            var ftpClient = new AsyncFtpClient
+                    (
+                        Properties.Settings.Default.ExternalFTPServer_Host,
+                        Properties.Settings.Default.ExternalFTPServer_Username,
+                        Properties.Settings.Default.ExternalFTPServer_Password
+                    );
+            ftpClient.ValidateCertificate += FtpClient_ValidateCertificate;
+            await ftpClient.AutoConnect();
+            ftpClient.Config.RetryAttempts = 3;
+
             List<GanjoorEpub> epubs = new List<GanjoorEpub>();
             foreach (var gdb in gdbList)
             {
@@ -464,6 +493,7 @@ namespace gdb2epub
                             {
                                 GDB2EPub(gdbExtractPath, epubPath);
 
+
                                 epubs.Add
                                     (
                                     new GanjoorEpub()
@@ -473,6 +503,16 @@ namespace gdb2epub
                                         FileName = Path.GetFileName(epubPath)
                                     }
                                     );
+
+                               
+                                var remoteFilePath = $"{Properties.Settings.Default.ExternalFTPServer_RootPath}/epub/{Path.GetFileName(epubPath)}";
+                                lblPoetName.Text = remoteFilePath;
+                                Application.DoEvents();
+
+
+                                await ftpClient.UploadFile(epubPath, remoteFilePath, createRemoteDir: true);
+
+
                                 File.Delete(gdbExtractPath);
                                 string[] tmpFiles = Directory.GetFiles(Path.Combine(outPath, "temp"), "*.*");
                                 foreach (var tmpFile in tmpFiles)
@@ -486,6 +526,8 @@ namespace gdb2epub
 
                
             }
+
+            await ftpClient.Disconnect();
 
             Directory.Delete(Path.Combine(outPath, "temp"));
 

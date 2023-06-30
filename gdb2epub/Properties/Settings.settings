@@ -11,5 +11,17 @@
     <Setting Name="CoverFont" Type="System.Drawing.Font" Scope="User">
       <Value Profile="(Default)">IranNastaliq, 40pt</Value>
     </Setting>
+    <Setting Name="ExternalFTPServer_Host" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="ExternalFTPServer_Username" Type="System.String" Scope="User">
+      <Value Profile="(Default)">root</Value>
+    </Setting>
+    <Setting Name="ExternalFTPServer_Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ExternalFTPServer_RootPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/home</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -12,7 +12,7 @@ namespace gdb2epub.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.6.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -56,6 +56,54 @@ namespace gdb2epub.Properties {
             }
             set {
                 this["CoverFont"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
+        public string ExternalFTPServer_Host {
+            get {
+                return ((string)(this["ExternalFTPServer_Host"]));
+            }
+            set {
+                this["ExternalFTPServer_Host"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("root")]
+        public string ExternalFTPServer_Username {
+            get {
+                return ((string)(this["ExternalFTPServer_Username"]));
+            }
+            set {
+                this["ExternalFTPServer_Username"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ExternalFTPServer_Password {
+            get {
+                return ((string)(this["ExternalFTPServer_Password"]));
+            }
+            set {
+                this["ExternalFTPServer_Password"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/home")]
+        public string ExternalFTPServer_RootPath {
+            get {
+                return ((string)(this["ExternalFTPServer_RootPath"]));
+            }
+            set {
+                this["ExternalFTPServer_RootPath"] = value;
             }
         }
     }
