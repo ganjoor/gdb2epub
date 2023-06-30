@@ -180,7 +180,7 @@ namespace gdb2epub
             // btnChangeFont
             // 
             this.btnChangeFont.Location = new System.Drawing.Point(476, 174);
-            this.btnChangeFont.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChangeFont.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeFont.Name = "btnChangeFont";
             this.btnChangeFont.Size = new System.Drawing.Size(38, 28);
             this.btnChangeFont.TabIndex = 18;
@@ -191,7 +191,7 @@ namespace gdb2epub
             // btnChangeImage
             // 
             this.btnChangeImage.Location = new System.Drawing.Point(476, 244);
-            this.btnChangeImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChangeImage.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeImage.Name = "btnChangeImage";
             this.btnChangeImage.Size = new System.Drawing.Size(38, 28);
             this.btnChangeImage.TabIndex = 19;
@@ -202,7 +202,7 @@ namespace gdb2epub
             // btnSelectFont
             // 
             this.btnSelectFont.Location = new System.Drawing.Point(476, 208);
-            this.btnSelectFont.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelectFont.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelectFont.Name = "btnSelectFont";
             this.btnSelectFont.Size = new System.Drawing.Size(38, 28);
             this.btnSelectFont.TabIndex = 20;
@@ -229,9 +229,9 @@ namespace gdb2epub
             this.grp.Controls.Add(this.btnSelectXml);
             this.grp.Controls.Add(this.txtXmlPath);
             this.grp.Location = new System.Drawing.Point(36, 282);
-            this.grp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grp.Margin = new System.Windows.Forms.Padding(2);
             this.grp.Name = "grp";
-            this.grp.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grp.Padding = new System.Windows.Forms.Padding(2);
             this.grp.Size = new System.Drawing.Size(548, 337);
             this.grp.TabIndex = 21;
             this.grp.TabStop = false;
@@ -240,7 +240,7 @@ namespace gdb2epub
             // txtFTPRootPath
             // 
             this.txtFTPRootPath.Location = new System.Drawing.Point(77, 196);
-            this.txtFTPRootPath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFTPRootPath.Margin = new System.Windows.Forms.Padding(2);
             this.txtFTPRootPath.Name = "txtFTPRootPath";
             this.txtFTPRootPath.Size = new System.Drawing.Size(454, 20);
             this.txtFTPRootPath.TabIndex = 15;
@@ -258,8 +258,9 @@ namespace gdb2epub
             // txtFTPPassword
             // 
             this.txtFTPPassword.Location = new System.Drawing.Point(78, 171);
-            this.txtFTPPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFTPPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtFTPPassword.Name = "txtFTPPassword";
+            this.txtFTPPassword.PasswordChar = '*';
             this.txtFTPPassword.Size = new System.Drawing.Size(454, 20);
             this.txtFTPPassword.TabIndex = 13;
             // 
@@ -276,7 +277,7 @@ namespace gdb2epub
             // txtFTPUsername
             // 
             this.txtFTPUsername.Location = new System.Drawing.Point(78, 144);
-            this.txtFTPUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFTPUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtFTPUsername.Name = "txtFTPUsername";
             this.txtFTPUsername.Size = new System.Drawing.Size(454, 20);
             this.txtFTPUsername.TabIndex = 11;
@@ -294,7 +295,7 @@ namespace gdb2epub
             // txtFTPHost
             // 
             this.txtFTPHost.Location = new System.Drawing.Point(78, 117);
-            this.txtFTPHost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFTPHost.Margin = new System.Windows.Forms.Padding(2);
             this.txtFTPHost.Name = "txtFTPHost";
             this.txtFTPHost.Size = new System.Drawing.Size(454, 20);
             this.txtFTPHost.TabIndex = 9;
@@ -312,7 +313,7 @@ namespace gdb2epub
             // progressFiles
             // 
             this.progressFiles.Location = new System.Drawing.Point(18, 299);
-            this.progressFiles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.progressFiles.Margin = new System.Windows.Forms.Padding(2);
             this.progressFiles.Name = "progressFiles";
             this.progressFiles.Size = new System.Drawing.Size(512, 24);
             this.progressFiles.TabIndex = 7;
@@ -320,7 +321,7 @@ namespace gdb2epub
             // btnBatchGenerate
             // 
             this.btnBatchGenerate.Location = new System.Drawing.Point(18, 229);
-            this.btnBatchGenerate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBatchGenerate.Margin = new System.Windows.Forms.Padding(2);
             this.btnBatchGenerate.Name = "btnBatchGenerate";
             this.btnBatchGenerate.Size = new System.Drawing.Size(512, 58);
             this.btnBatchGenerate.TabIndex = 6;
@@ -331,7 +332,7 @@ namespace gdb2epub
             // btnIndexHtml
             // 
             this.btnIndexHtml.Location = new System.Drawing.Point(464, 88);
-            this.btnIndexHtml.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIndexHtml.Margin = new System.Windows.Forms.Padding(2);
             this.btnIndexHtml.Name = "btnIndexHtml";
             this.btnIndexHtml.Size = new System.Drawing.Size(66, 20);
             this.btnIndexHtml.TabIndex = 5;
@@ -342,7 +343,7 @@ namespace gdb2epub
             // txtIndexHtmlPath
             // 
             this.txtIndexHtmlPath.Location = new System.Drawing.Point(18, 90);
-            this.txtIndexHtmlPath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIndexHtmlPath.Margin = new System.Windows.Forms.Padding(2);
             this.txtIndexHtmlPath.Name = "txtIndexHtmlPath";
             this.txtIndexHtmlPath.Size = new System.Drawing.Size(444, 20);
             this.txtIndexHtmlPath.TabIndex = 4;
@@ -351,7 +352,7 @@ namespace gdb2epub
             // btnEpubsOutDir
             // 
             this.btnEpubsOutDir.Location = new System.Drawing.Point(464, 56);
-            this.btnEpubsOutDir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEpubsOutDir.Margin = new System.Windows.Forms.Padding(2);
             this.btnEpubsOutDir.Name = "btnEpubsOutDir";
             this.btnEpubsOutDir.Size = new System.Drawing.Size(66, 20);
             this.btnEpubsOutDir.TabIndex = 3;
@@ -362,7 +363,7 @@ namespace gdb2epub
             // txtEpubsPath
             // 
             this.txtEpubsPath.Location = new System.Drawing.Point(18, 58);
-            this.txtEpubsPath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEpubsPath.Margin = new System.Windows.Forms.Padding(2);
             this.txtEpubsPath.Name = "txtEpubsPath";
             this.txtEpubsPath.Size = new System.Drawing.Size(444, 20);
             this.txtEpubsPath.TabIndex = 2;
@@ -371,7 +372,7 @@ namespace gdb2epub
             // btnSelectXml
             // 
             this.btnSelectXml.Location = new System.Drawing.Point(464, 26);
-            this.btnSelectXml.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelectXml.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelectXml.Name = "btnSelectXml";
             this.btnSelectXml.Size = new System.Drawing.Size(66, 20);
             this.btnSelectXml.TabIndex = 1;
@@ -382,7 +383,7 @@ namespace gdb2epub
             // txtXmlPath
             // 
             this.txtXmlPath.Location = new System.Drawing.Point(18, 28);
-            this.txtXmlPath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtXmlPath.Margin = new System.Windows.Forms.Padding(2);
             this.txtXmlPath.Name = "txtXmlPath";
             this.txtXmlPath.Size = new System.Drawing.Size(444, 20);
             this.txtXmlPath.TabIndex = 0;
@@ -410,7 +411,7 @@ namespace gdb2epub
             this.Controls.Add(this.btnGDB);
             this.Controls.Add(this.txtGDB);
             this.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "GDB ==> Epub";
             this.Load += new System.EventHandler(this.MainForm_Load);
