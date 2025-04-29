@@ -512,12 +512,18 @@ namespace gdb2epub
 
                                 await ftpClient.UploadFile(epubPath, remoteFilePath, createRemoteDir: true);
 
-
-                                File.Delete(gdbExtractPath);
-                                string[] tmpFiles = Directory.GetFiles(Path.Combine(outPath, "temp"), "*.*");
-                                foreach (var tmpFile in tmpFiles)
+                                try
                                 {
-                                    File.Delete(tmpFile);
+                                    File.Delete(gdbExtractPath);
+                                    string[] tmpFiles = Directory.GetFiles(Path.Combine(outPath, "temp"), "*.*");
+                                    foreach (var tmpFile in tmpFiles)
+                                    {
+                                        File.Delete(tmpFile);
+                                    }
+
+                                }
+                                catch
+                                {
                                 }
                             }
                         }
@@ -529,7 +535,14 @@ namespace gdb2epub
 
             await ftpClient.Disconnect();
 
-            Directory.Delete(Path.Combine(outPath, "temp"));
+            try
+            {
+                Directory.Delete(Path.Combine(outPath, "temp"));
+            }
+            catch
+            {
+            }
+            
 
             epubs.Sort((a, b) => a.Author.CompareTo(b.Author));
 
