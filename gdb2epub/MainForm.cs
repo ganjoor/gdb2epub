@@ -504,13 +504,16 @@ namespace gdb2epub
                                     }
                                     );
 
+                                if (!chkSkipUpload.Checked)
+                                {
+                                    var remoteFilePath = $"{Properties.Settings.Default.ExternalFTPServer_RootPath}/epub/{Path.GetFileName(epubPath)}";
+                                    lblPoetName.Text = remoteFilePath;
+                                    Application.DoEvents();
+
+
+                                    await ftpClient.UploadFile(epubPath, remoteFilePath, createRemoteDir: true);
+                                }
                                
-                                var remoteFilePath = $"{Properties.Settings.Default.ExternalFTPServer_RootPath}/epub/{Path.GetFileName(epubPath)}";
-                                lblPoetName.Text = remoteFilePath;
-                                Application.DoEvents();
-
-
-                                await ftpClient.UploadFile(epubPath, remoteFilePath, createRemoteDir: true);
 
                                 try
                                 {

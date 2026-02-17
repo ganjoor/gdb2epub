@@ -61,6 +61,7 @@ namespace gdb2epub
             this.txtEpubsPath = new System.Windows.Forms.TextBox();
             this.btnSelectXml = new System.Windows.Forms.Button();
             this.txtXmlPath = new System.Windows.Forms.TextBox();
+            this.chkSkipUpload = new System.Windows.Forms.CheckBox();
             this.grp.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,7 +123,7 @@ namespace gdb2epub
             // 
             // txtMainFontPath
             // 
-            this.txtMainFontPath.Location = new System.Drawing.Point(134, 180);
+            this.txtMainFontPath.Location = new System.Drawing.Point(134, 159);
             this.txtMainFontPath.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtMainFontPath.Name = "txtMainFontPath";
             this.txtMainFontPath.Size = new System.Drawing.Size(338, 20);
@@ -132,7 +133,7 @@ namespace gdb2epub
             // lblMainFontPath
             // 
             this.lblMainFontPath.AutoSize = true;
-            this.lblMainFontPath.Location = new System.Drawing.Point(40, 182);
+            this.lblMainFontPath.Location = new System.Drawing.Point(40, 161);
             this.lblMainFontPath.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMainFontPath.Name = "lblMainFontPath";
             this.lblMainFontPath.Size = new System.Drawing.Size(94, 13);
@@ -142,7 +143,7 @@ namespace gdb2epub
             // lblCoverFont
             // 
             this.lblCoverFont.AutoSize = true;
-            this.lblCoverFont.Location = new System.Drawing.Point(40, 214);
+            this.lblCoverFont.Location = new System.Drawing.Point(40, 193);
             this.lblCoverFont.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCoverFont.Name = "lblCoverFont";
             this.lblCoverFont.Size = new System.Drawing.Size(54, 13);
@@ -151,7 +152,7 @@ namespace gdb2epub
             // 
             // txtCoverFont
             // 
-            this.txtCoverFont.Location = new System.Drawing.Point(134, 212);
+            this.txtCoverFont.Location = new System.Drawing.Point(134, 191);
             this.txtCoverFont.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtCoverFont.Name = "txtCoverFont";
             this.txtCoverFont.Size = new System.Drawing.Size(338, 20);
@@ -161,7 +162,7 @@ namespace gdb2epub
             // lblCoverImage
             // 
             this.lblCoverImage.AutoSize = true;
-            this.lblCoverImage.Location = new System.Drawing.Point(40, 248);
+            this.lblCoverImage.Location = new System.Drawing.Point(40, 227);
             this.lblCoverImage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCoverImage.Name = "lblCoverImage";
             this.lblCoverImage.Size = new System.Drawing.Size(56, 13);
@@ -170,7 +171,7 @@ namespace gdb2epub
             // 
             // txtCoverImage
             // 
-            this.txtCoverImage.Location = new System.Drawing.Point(134, 248);
+            this.txtCoverImage.Location = new System.Drawing.Point(134, 227);
             this.txtCoverImage.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtCoverImage.Name = "txtCoverImage";
             this.txtCoverImage.Size = new System.Drawing.Size(338, 20);
@@ -179,7 +180,7 @@ namespace gdb2epub
             // 
             // btnChangeFont
             // 
-            this.btnChangeFont.Location = new System.Drawing.Point(476, 174);
+            this.btnChangeFont.Location = new System.Drawing.Point(476, 153);
             this.btnChangeFont.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeFont.Name = "btnChangeFont";
             this.btnChangeFont.Size = new System.Drawing.Size(38, 28);
@@ -190,7 +191,7 @@ namespace gdb2epub
             // 
             // btnChangeImage
             // 
-            this.btnChangeImage.Location = new System.Drawing.Point(476, 244);
+            this.btnChangeImage.Location = new System.Drawing.Point(476, 223);
             this.btnChangeImage.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeImage.Name = "btnChangeImage";
             this.btnChangeImage.Size = new System.Drawing.Size(38, 28);
@@ -201,7 +202,7 @@ namespace gdb2epub
             // 
             // btnSelectFont
             // 
-            this.btnSelectFont.Location = new System.Drawing.Point(476, 208);
+            this.btnSelectFont.Location = new System.Drawing.Point(476, 187);
             this.btnSelectFont.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelectFont.Name = "btnSelectFont";
             this.btnSelectFont.Size = new System.Drawing.Size(38, 28);
@@ -212,6 +213,7 @@ namespace gdb2epub
             // 
             // grp
             // 
+            this.grp.Controls.Add(this.chkSkipUpload);
             this.grp.Controls.Add(this.txtFTPRootPath);
             this.grp.Controls.Add(this.lblFTPRootPath);
             this.grp.Controls.Add(this.txtFTPPassword);
@@ -228,11 +230,11 @@ namespace gdb2epub
             this.grp.Controls.Add(this.txtEpubsPath);
             this.grp.Controls.Add(this.btnSelectXml);
             this.grp.Controls.Add(this.txtXmlPath);
-            this.grp.Location = new System.Drawing.Point(36, 282);
+            this.grp.Location = new System.Drawing.Point(36, 261);
             this.grp.Margin = new System.Windows.Forms.Padding(2);
             this.grp.Name = "grp";
             this.grp.Padding = new System.Windows.Forms.Padding(2);
-            this.grp.Size = new System.Drawing.Size(548, 337);
+            this.grp.Size = new System.Drawing.Size(548, 356);
             this.grp.TabIndex = 21;
             this.grp.TabStop = false;
             this.grp.Text = "https://epub.ganjoor.net";
@@ -312,7 +314,7 @@ namespace gdb2epub
             // 
             // progressFiles
             // 
-            this.progressFiles.Location = new System.Drawing.Point(18, 299);
+            this.progressFiles.Location = new System.Drawing.Point(18, 317);
             this.progressFiles.Margin = new System.Windows.Forms.Padding(2);
             this.progressFiles.Name = "progressFiles";
             this.progressFiles.Size = new System.Drawing.Size(512, 24);
@@ -320,7 +322,7 @@ namespace gdb2epub
             // 
             // btnBatchGenerate
             // 
-            this.btnBatchGenerate.Location = new System.Drawing.Point(18, 229);
+            this.btnBatchGenerate.Location = new System.Drawing.Point(18, 247);
             this.btnBatchGenerate.Margin = new System.Windows.Forms.Padding(2);
             this.btnBatchGenerate.Name = "btnBatchGenerate";
             this.btnBatchGenerate.Size = new System.Drawing.Size(512, 58);
@@ -389,11 +391,21 @@ namespace gdb2epub
             this.txtXmlPath.TabIndex = 0;
             this.txtXmlPath.Text = "C:\\inetpub\\iganjoor\\android\\androidgdbs.xml";
             // 
+            // chkSkipUpload
+            // 
+            this.chkSkipUpload.AutoSize = true;
+            this.chkSkipUpload.Location = new System.Drawing.Point(18, 221);
+            this.chkSkipUpload.Name = "chkSkipUpload";
+            this.chkSkipUpload.Size = new System.Drawing.Size(81, 17);
+            this.chkSkipUpload.TabIndex = 16;
+            this.chkSkipUpload.Text = "Skip Upload";
+            this.chkSkipUpload.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(604, 647);
+            this.ClientSize = new System.Drawing.Size(604, 632);
             this.Controls.Add(this.grp);
             this.Controls.Add(this.btnSelectFont);
             this.Controls.Add(this.btnChangeImage);
@@ -456,6 +468,7 @@ namespace gdb2epub
         private System.Windows.Forms.TextBox txtFTPPassword;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtFTPUsername;
+        private System.Windows.Forms.CheckBox chkSkipUpload;
     }
 }
 
